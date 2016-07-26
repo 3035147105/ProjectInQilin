@@ -101,7 +101,7 @@ public class SensitiveWordFilter {
                     }else {
                         str = text.replace(v, "*");
                     }
-//                    sensitiveWords.add(v);
+//                    sensitiveWords.insert(v);
                 }
                 char c = text.charAt(j);
                 obj = childMap.get(c);
@@ -109,7 +109,7 @@ public class SensitiveWordFilter {
                     childMap = (Map) obj;
                     if(c == text.charAt(length-1)){
                         String v2 = text.substring(i, length);
-//                        sensitiveWords.add(v2);
+//                        sensitiveWords.insert(v2);
                         if(str != ""){
                             str = str.replace(v2, "*");
                         }else {

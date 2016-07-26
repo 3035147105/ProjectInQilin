@@ -1,14 +1,14 @@
-package com.qilin.cms.service;
+package com.qilin.cms.service.frame;
 
 import java.util.List;
 
 /**
  * Created by gaohaiqing on 16-7-26.
  */
-public interface IService<T extends Object> {
+public interface EntityService<T> {
     T get(long id);
 
-    int add(T entity);
+    int insert(T entity);
 
     int delete(long id);
 

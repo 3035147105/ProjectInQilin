@@ -1,13 +1,10 @@
 package com.qilin.cms.controller;
 
-import com.qilin.cms.daoImpl.FeedbackDao;
-import com.qilin.cms.daoImpl.UserDao;
 import com.qilin.cms.model.Feedback;
 import com.qilin.cms.model.FeedbackExample;
 import com.qilin.cms.model.User;
-import com.qilin.cms.model.UserExample;
-import com.qilin.cms.service.FeedbackServiceImpl;
-import com.qilin.cms.service.UserServiceImpl;
+import com.qilin.cms.service.FeedbackService;
+import com.qilin.cms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,9 +22,9 @@ import java.util.List;
 public class UserController{
 
     @Autowired
-    UserServiceImpl userService;
+    UserService userService;
     @Autowired
-    FeedbackServiceImpl feedbackService;
+    FeedbackService feedbackService;
 
     @RequestMapping(value = "/userList.do", method = RequestMethod.GET)
     public String index(Model model){
@@ -43,7 +40,7 @@ public class UserController{
         user.setRole("bbbb");
         user.setUsername("aaaaa");
         user.setPasswd("bbbb");
-        return userService.add(user);
+        return userService.insert(user);
     }
 
 //    @RequestMapping(value = "list.do")
@@ -65,7 +62,7 @@ public class UserController{
 //    @RequestMapping(value = "page.do")
 //    @ResponseBody
 //    public List<User> page(int offset, int limit){
-//        return userService.queryByPage(new UserExample(), offset, limit);
+//        return userService.selectList(new UserExample(), offset, limit);
 //    }
 
     @RequestMapping(value = "feedback.do")
