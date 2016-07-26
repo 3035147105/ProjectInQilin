@@ -3,6 +3,7 @@ package com.qilin.cms.controller;
 import com.qilin.cms.model.Feedback;
 import com.qilin.cms.model.FeedbackExample;
 import com.qilin.cms.model.User;
+import com.qilin.cms.model.UserExample;
 import com.qilin.cms.service.FeedbackService;
 import com.qilin.cms.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,9 +29,14 @@ public class UserController{
 
     @RequestMapping(value = "/userList.do", method = RequestMethod.GET)
     public String index(Model model){
-        User user = (User) userService.get(1);
+        User user = userService.get(1);
         model.addAttribute("user", user);
         return "user";
+    }
+
+    @RequestMapping(value = "/users", method = RequestMethod.GET)
+    public @ResponseBody List findAllUser(){
+        return userService.query(new UserExample());
     }
 
     @RequestMapping(value = "/add.do")

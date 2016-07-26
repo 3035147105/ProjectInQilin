@@ -30,6 +30,12 @@ public class BaseEntityService<T> implements EntityService<T> {
     public List<T> queryByPage(Object example, int offset, int limit){
         return dao.selectList(example, offset, limit);
     }
+
+    @Override
+    public List<T> findAll() {
+        return dao.findAll();
+    }
+
     public T get(long id){
         return dao.get(id);
     }

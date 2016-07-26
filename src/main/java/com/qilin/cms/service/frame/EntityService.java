@@ -17,4 +17,5 @@ public interface EntityService<T> {
     List<T> query(Object example);
 
     List<T> queryByPage(Object example, int offset, int limit);
+    List<T> findAll();
 }
