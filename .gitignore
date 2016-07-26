@@ -3,3 +3,6 @@ target
 logs
 *.iml
 *.rebel
+rebel.xml
+/src
+
