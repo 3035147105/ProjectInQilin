@@ -24,17 +24,17 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         return context.getBean(var1);
     }
 
-//    public static <T> T getBean(Class<T> var1, Object... var2) throws BeansException {
-//        return context.getBean(var1, var2);
-//    }
+    public static <T> T getBean(Class<T> var1, Object... var2) throws BeansException {
+        return context.getBean(var1, var2);
+    }
 
     public static <T> T getAutoBean(Class<T> var1) throws BeansException {
         return autowireBean(context.getBean(var1));
     }
 
-//    public static <T> T getAutoBean(Class<T> var1, Object... var2) throws BeansException {
-//        return autowireBean(context.getBean(var1,var2));
-//    }
+    public static <T> T getAutoBean(Class<T> var1, Object... var2) throws BeansException {
+        return autowireBean(context.getBean(var1,var2));
+    }
 
 
     public static <T> T autowireBean(T var1) throws BeansException {;

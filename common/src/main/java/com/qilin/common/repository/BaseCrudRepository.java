@@ -22,7 +22,7 @@ public class BaseCrudRepository<T>{
 
     private final Log log = LogFactory.getLog(this.getClass());
 
-    private static final String MAPPER_PACKAGE_PATH = "com.qilin.cms.baseCrudRepository";
+    private static final String MAPPER_PACKAGE_PATH = "com.qilin.cms.mapper";
     private static final String EXAMPLE_PACKAGE_PATH = "com.qilin.cms.model";
     private static final String POINT = ".";
 
@@ -30,7 +30,7 @@ public class BaseCrudRepository<T>{
      * 约定大于配置，Dao命名规则，实体名+Dao
      */
     public BaseCrudRepository() {
-        entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];;
+        entityClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
         mapperPath = new StringBuffer()
                 .append(MAPPER_PACKAGE_PATH)
                 .append(POINT)

@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by gaohaiqing on 16-7-26.
  */
-public class BaseCrudService<T> implements CrudService<T> {
+public abstract class BaseCrudService<T> implements CrudService<T> {
     @Autowired
     protected BaseCrudRepository<T> baseCrudRepository;
 
