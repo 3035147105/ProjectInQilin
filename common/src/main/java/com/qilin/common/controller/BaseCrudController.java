@@ -21,7 +21,7 @@ public abstract class BaseCrudController<T> implements CrudController<T> {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/all/", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     @Override
     public List<T> findAll() {
         return crudService.findAll();

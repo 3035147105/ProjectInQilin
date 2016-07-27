@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * Created by luoziyihao on 7/27/16.
  */
 @Controller
-@RequestMapping(value = "/FeedBack")
+@RequestMapping(value = "/feedBack")
 public class FeedbackController extends BaseCrudController<Feedback>{
 }

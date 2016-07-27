@@ -22,7 +22,7 @@ public class BaseCrudRepository<T>{
 
     private final Log log = LogFactory.getLog(this.getClass());
 
-    private static final String MAPPER_PACKAGE_PATH = "com.qilin.cms.mapper";
+    private static final String MAPPER_PACKAGE_PATH = "com.qilin.cms.dao";
     private static final String EXAMPLE_PACKAGE_PATH = "com.qilin.cms.model";
     private static final String POINT = ".";
 
@@ -51,11 +51,14 @@ public class BaseCrudRepository<T>{
     private SqlSessionTemplate sqlSession;
 
     public List<T> findAll(){
+        Object  example;
         try {
-            return findList(Class.forName(examplePath).newInstance());
+            example = Class.forName(examplePath).newInstance();
         } catch (Exception e) {
             throw new RuntimeException("class loader failed | " + examplePath, e);
         }
+        return findList(example);
+
     }
 
     public T findOne(long id){
@@ -64,7 +67,7 @@ public class BaseCrudRepository<T>{
 
 
     public int save(T entity){
-        return this.sqlSession.insert(getMapperMethodPath("save"), entity);
+        return this.sqlSession.insert(getMapperMethodPath("insert"), entity);
     }
 
     public int update(T entity){
