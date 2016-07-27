@@ -29,14 +29,14 @@ public class UserController{
 
     @RequestMapping(value = "/userList.do", method = RequestMethod.GET)
     public String index(Model model){
-        User user = userService.get(1);
+        User user = userService.findOne(1);
         model.addAttribute("user", user);
         return "user";
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public @ResponseBody List findAllUser(){
-        return userService.query(new UserExample());
+        return userService.findList(new UserExample());
     }
 
     @RequestMapping(value = "/add.do")
@@ -46,7 +46,7 @@ public class UserController{
         user.setRole("bbbb");
         user.setUsername("aaaaa");
         user.setPasswd("bbbb");
-        return userService.insert(user);
+        return userService.save(user);
     }
 
 //    @RequestMapping(value = "list.do")
@@ -55,25 +55,25 @@ public class UserController{
 //        UserExample example = new UserExample();
 //        UserExample.Criteria criteria = example.createCriteria();
 //        criteria.andUsernameEqualTo("aaaaa");
-//        List<User> list = userService.query(example);
+//        List<User> list = userService.findList(example);
 //        return list;
 //    }
 //
 //    @RequestMapping(value = "all.do")
 //    @ResponseBody
 //    public List<User> all(){
-//        return userService.query(new UserExample());
+//        return userService.findList(new UserExample());
 //    }
 //
 //    @RequestMapping(value = "page.do")
 //    @ResponseBody
 //    public List<User> page(int offset, int limit){
-//        return userService.selectList(new UserExample(), offset, limit);
+//        return userService.findList(new UserExample(), offset, limit);
 //    }
 
     @RequestMapping(value = "feedback.do")
     @ResponseBody
     public List<Feedback> getFeedback(){
-        return feedbackService.query(new FeedbackExample());
+        return feedbackService.findList(new FeedbackExample());
     }
 }

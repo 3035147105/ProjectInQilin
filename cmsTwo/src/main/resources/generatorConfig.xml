@@ -11,7 +11,7 @@
                                 userId="root" password="" />
                 <!--<javaModelGenerator targetPackage="com.qilin.cms.model" targetProject="C:\\ProjectTwo\src\main\java" />-->
                 <!--<sqlMapGenerator targetPackage="sqlMapper" targetProject="C:\\ProjectTwo\src\main\resources" />-->
-                <!--<javaClientGenerator targetPackage="com.qilin.cms.dao" targetProject="C:\\ProjectTwo\src\main\java" type="XMLMAPPER" />-->
+                <!--<javaClientGenerator targetPackage="com.qilin.cms.baseCrudRepository" targetProject="C:\\ProjectTwo\src\main\java" type="XMLMAPPER" />-->
                 <javaModelGenerator targetPackage="com.qilin.cms.model" targetProject="/home/gaohaiqing/Works/springMvc+mybaties/ProjectTwo/src/main/java" />
                 <sqlMapGenerator targetPackage="sqlMapper" targetProject="/home/gaohaiqing/Works/springMvc+mybaties/ProjectTwo/src/main/resources" />
                 <javaClientGenerator targetPackage="com.qilin.cms.dao" targetProject="/home/gaohaiqing/Works/springMvc+mybaties/ProjectTwo/src/main/java" type="XMLMAPPER" />

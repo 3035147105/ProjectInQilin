@@ -1,4 +1,4 @@
-package com.qilin.cms.dao.mapper;
+package com.qilin.cms.dao;
 
 import com.qilin.cms.model.Feedback;
 import com.qilin.cms.model.FeedbackExample;

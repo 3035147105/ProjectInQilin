@@ -1,4 +1,4 @@
-package com.qilin.cms.dao.mapper;
+package com.qilin.cms.dao;
 
 import com.qilin.cms.model.User;
 import com.qilin.cms.model.UserExample;

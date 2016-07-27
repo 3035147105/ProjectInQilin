@@ -35,7 +35,7 @@
         <qiniu-java-sdk.version>[7.0.0, 7.0.99]</qiniu-java-sdk.version>
         <mysql-connector-java.version>5.1.30</mysql-connector-java.version>
         <jstl.version>1.2</jstl.version>
-        <fasterxml.jackson.version>2.4.3</fasterxml.jackson.version>
+        <fasterxml.jackson.version>2.8.1</fasterxml.jackson.version>
         <commons-lang3.version>3.4</commons-lang3.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <mybatis.version>3.2.6</mybatis.version>
@@ -135,6 +135,10 @@
             <artifactId>spring-messaging</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
         </dependency>
@@ -224,6 +228,11 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-messaging</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data.version}</version>
             </dependency>
             <!-- web相关jar包 -->
             <dependency>
@@ -318,6 +327,11 @@
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
                 <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

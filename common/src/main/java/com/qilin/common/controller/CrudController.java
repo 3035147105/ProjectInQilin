@@ -1,4 +1,4 @@
-package com.qilin.cms.controller.frame;
+package com.qilin.common.controller;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -9,13 +9,13 @@ import static org.json.XMLTokener.entity;
 /**
  * Created by luoziyihao on 7/26/16.
  */
-public interface EntityController<T> {
+public interface CrudController<T> {
 
-    T get(long id);
+    T findOne(long id);
 
     List<T> findAll();
 
-    int insert(@ModelAttribute T entity);
+    int save(@ModelAttribute T entity);
 
     int delete(long id);
 
