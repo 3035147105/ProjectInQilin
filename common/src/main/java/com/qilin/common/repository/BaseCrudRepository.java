@@ -14,7 +14,7 @@ import java.util.List;
  * Created by gaohaiqing on 16-7-25.
  */
 public class BaseCrudRepository<T>{
-    // Example的全路径名
+    // model的全路径名
     private final String examplePath;
     // Mapper的全路径名
     private final String mapperPath;
@@ -98,4 +98,5 @@ public class BaseCrudRepository<T>{
     private String getMapperMethodPath(String methodName) {
         return new StringBuffer().append(mapperPath).append(POINT).append(methodName).toString();
     }
+
 }
