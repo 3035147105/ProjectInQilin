@@ -1,5 +1,6 @@
 package com.qilin.cms.controller;
 
+import com.qilin.cms.designmodel.Single.Singleton;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
