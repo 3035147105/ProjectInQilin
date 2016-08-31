@@ -2,6 +2,8 @@ package com.qilin.cms.controller.Proxy;
 
 /**
  * Created by gaohaiqing on 16-7-19.
+ *
+ * 真实角色
  */
 public class DomainObjDaoImpl implements DomaininObjDao{
 

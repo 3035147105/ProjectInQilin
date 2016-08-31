@@ -8,7 +8,14 @@ import java.lang.reflect.Method;
 
 /**
  * Created by gaohaiqing on 16-7-19.
- * 动态代理
+ *
+ * 注意：这里是动态代理，一开始竟然不知道，还是自己写的，晕死~
+ *
+ * 动态代理 - 利用spring框架的代理接口
+ *
+ * 这个类的功能是：执行目标类的save方法前后加锁
+ *
+ * 代理角色
  */
 public class LockHandler implements InvocationHandler{
 

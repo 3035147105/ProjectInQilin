@@ -2,7 +2,8 @@ package com.qilin.cms.controller.Proxy;
 
 /**
  * Created by gaohaiqing on 16-7-19.
- * 动态代--测试
+ *
+ * 测试spring的代理接口
  */
 public class DyproxyTest {
 
