@@ -1,9 +1,9 @@
-package com.qilin.cms.designmodel.Proxy;
+package com.qilin.cms.designmodel.Proxy.StaticProxy;
 
 /**
  * Created by gaohaiqing on 16-8-31.
  *
- * 代理模式
+ * 代理模式 之 静态代理
  *
  * 功能介绍：代理对象将客户端调用委派给目标对象，在调用目标对象的方法之前跟之后都执行一些操作
  *

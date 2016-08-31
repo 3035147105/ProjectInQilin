@@ -1,4 +1,4 @@
-package com.qilin.cms.designmodel.Proxy;
+package com.qilin.cms.designmodel.Proxy.StaticProxy;
 
 /**
  * Created by gaohaiqing on 16-8-31.
