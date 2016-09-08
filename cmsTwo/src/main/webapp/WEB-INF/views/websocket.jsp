@@ -63,7 +63,8 @@
                 log('Info: connection opened.');
             };
             ws.onmessage = function (event) {
-                log('Received: ' + event.data);
+//                log('Received: ' + event.data);
+                log(event.data);
             };
             ws.onclose = function (event) {
                 setConnected(false);
@@ -83,7 +84,7 @@
         function echo() {
             if (ws != null) {
                 var message = document.getElementById('message').value;
-                log('Sent: ' + message);
+//                log('Sent: ' + message);
                 ws.send(message);
             } else {
                 alert('connection not established, please connect.');
