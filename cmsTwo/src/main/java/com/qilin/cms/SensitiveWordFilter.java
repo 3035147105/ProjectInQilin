@@ -8,6 +8,7 @@ import java.io.*;
 import java.util.*;
 /**
  * Created by gaohaiqing on 16-7-21.
+ * 功能：过滤敏感词
  * 有问题
  */
 public class SensitiveWordFilter {

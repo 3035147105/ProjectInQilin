@@ -16,9 +16,10 @@ public class DynamicProxyClient {
          * 代理对象 与 真实对象使用相同的类加载器，
          * 相同的接口
          */
-        ClassLoader classLoader = service.getClass().getClassLoader();
-        Class[] classes = new Class[]{IService.class};
-        TransactionInvationHandler invationHandler = new TransactionInvationHandler(service);
+        ClassLoader classLoader = service.getClass().getClassLoader();//类加载器
+        Class[] classes = new Class[]{IService.class};//类
+        TransactionInvationHandler invationHandler = new TransactionInvationHandler(service);//动态代理对象
+
         IService proxy = (IService) Proxy.newProxyInstance(classLoader, classes, invationHandler);
         proxy.saveObj();
     }

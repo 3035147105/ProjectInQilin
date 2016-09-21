@@ -4,6 +4,8 @@ package com.qilin.cms.designmodel.Composite;
  * Created by gaohaiqing on 16-8-30.
  *
  * 组合模式
+ *
+ * 应用场景：善于处理 树类型的数据
  */
 public class CompositeClient {
 
