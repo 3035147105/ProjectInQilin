@@ -1,12 +1,6 @@
 package com.qilin.cms.ghqAop;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  * 写完这段话，我觉的跟某个设计模式很像，跟继承对应的组合很像，就是这种方式更解耦
  *
- * 还有问题，不想再搞了！！！！！
+ * 还有声明式AOP，内容也比较多
  */
 @Controller
 @RequestMapping("ghqAop")
@@ -30,7 +24,7 @@ public class ghqAop {
 
     @RequestMapping(value = "")
     public void bossCountMoney(){
-        boss.signIn();
+        boss.countMoney(2000);
     }
 
 
