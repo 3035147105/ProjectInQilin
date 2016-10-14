@@ -50,8 +50,8 @@ public class ThreadOne {
          * 第1行 跟 第2行 大约隔了2秒
          * a num得到的结果，是我们希望的结果
          *
-         * 可以看出，thread1线程执行完addNum方法后 thread2才能执行；换句话说 thread1获得addNum的锁后，别的线程不能再进入该方法
-         * 上一段话的后半句其实说的不对，synchronized不是方法锁而是对象锁，即synchronized是锁的是对象
+         * 可以看出，thread1线程执行完addNum方法后 thread2才能执行；换句话说 thread1获得锁后，别的线程不能再得到该锁
+         * 要注意的是，synchronized不是方法锁而是对象锁，即synchronized锁的是对象
          */
 
         //通过new 两个对象，验证最后synchronized是对象锁
@@ -67,11 +67,11 @@ public class ThreadOne {
          * a num = 100
          *
          * 第3行 跟 第4行 大约隔了2秒
-         * 谁也不影响谁，两个子线程各自执行各自的；原因是 JVM创建了 两个ThreadOne对象，即产生了 两个锁
+         * 出现上述结果的原因： JVM创建了 两个ThreadOne对象，即产生了 两个锁；两个线程各自拿到一个锁，谁也不影响谁
          */
     }
     /**
-     * synchronized还有一个特性：重入锁
+     * synchronized还有一个特性：重入锁；在ThreadTwo类中讲到
      */
 
 }

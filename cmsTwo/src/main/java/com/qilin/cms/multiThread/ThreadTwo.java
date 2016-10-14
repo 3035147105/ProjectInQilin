@@ -17,7 +17,7 @@ public class ThreadTwo {
     }
     public synchronized void c(){
         System.out.println(Thread.currentThread().getName() +"执行c方法");
-//        this.a();   加上这一行就会
+//        this.a();   加上这一行就会使内存溢出
     }
 
     public static void main(String [] args){
