@@ -14,7 +14,7 @@ public class FutureData implements Data {
         }
         this.realData = realData;
         isReady = true;
-        //notifyAll();//唤醒线程，这个方法是JVM内部去调用，编写代码的人不需要管
+        notifyAll();//唤醒线程，这个方法是JVM内部去调用，编写代码的人不需要管
     }
 
     @Override
