@@ -6,7 +6,7 @@ package com.qilin.cms.multiThread;
  * 本类 主要 研究Thread类的 实例方法和静态方法 以及 线程的基础知识
  *
  * 虚拟机中的线程状态：6种
- * 新建 、运行 、阻塞、 等待：Object的wait, Thread的join, LockSupport的park、超时等待：Thread的sleepF方法join方法，终止
+ * 新建 、运行 、阻塞、 等待：Object的wait, Thread的join, LockSupport的park、超时等待：Thread的sleep方法join方法，终止
  **/
 public class ThreadMethod {
     //主线程
