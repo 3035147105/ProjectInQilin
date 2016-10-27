@@ -1,6 +1,5 @@
 package com.qilin.cms.controller;
 
-import com.qilin.cms.designmodel.Single.Singleton;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,7 +15,6 @@ public class Test {
     public static void main(String[] args){
         Test test = new Test();
     }
-
     void testMap(){
         Map map = new HashMap<>();
         map.put("person","person");

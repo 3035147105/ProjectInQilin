@@ -27,6 +27,7 @@ public class UserController{
     @Autowired
     FeedbackService feedbackService;
 
+
     @RequestMapping(value = "/userList.do", method = RequestMethod.GET)
     public String index(Model model){
         User user = userService.findOne(1);
