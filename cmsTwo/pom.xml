@@ -56,8 +56,6 @@
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
         </dependency>
-
-
     </dependencies>
 
     <build>

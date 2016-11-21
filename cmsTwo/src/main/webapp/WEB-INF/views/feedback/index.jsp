@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: gaohaiqing
-  Date: 16-7-27
-  Time: 下午6:16
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,6 +5,13 @@
     <script src="${pageContext.request.contextPath}/jquery/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/react-15.4/react.min.js"></script>
+    <script src="${pageContext.request.contextPath}/react-15.4/react-dom.min.js"></script>
+    <script src="${pageContext.request.contextPath}/react-15.4/react-dom-fiber.min.js"></script>
+    <script src="${pageContext.request.contextPath}/react-15.4/react-dom-server.min.js"></script>
+    <script src="${pageContext.request.contextPath}/react-15.4/react-with-addons.min.js"></script>
+    <script src="${pageContext.request.contextPath}/react-15.4/browser.min.5.6.16.js"></script>
+    <script src="${pageContext.request.contextPath}/react-15.4/redux.min.3.6.0.js"></script>
     <title>feedback主页</title>
 </head>
 <body>
@@ -29,10 +29,10 @@
                         <h2>列表</h2>
                     </header>
                     <div class="main-box-body clearfix">
-                        <form:form action="${pageContext.request.contextPath}/tradeBrokerageNo/list.do" method="get"
+                        <form action="${pageContext.request.contextPath}/tradeBrokerageNo/list.do" method="get"
                                    class="form-inline" role="form">
                             <button type="submit" class="btn btn-success">搜索</button>
-                        </form:form>
+                        </form>
                         <br>
                             <div class="table-responsive">
                                 <table id="table-example-fixed" class="table table-hover">
@@ -44,15 +44,6 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <c:forEach var="row" items="${page}" varStatus="rowStatus">
-                                        <tr data-id="${row.id}">
-                                            <td>${row.content}</td>
-                                            <td>${row.phone}</td>
-                                            <td colspan="1">
-                                                <a class="btn btn-xs btn-danger" onclick="deleteBrokerage(${row.id})" data-toggle="modal">删除</a>
-                                            </td>
-                                        </tr>
-                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
@@ -62,5 +53,13 @@
         </div>
     </div>
 </div>
+<div id="ceshi"></div>
 </body>
 </html>
+<script type="text/jsx">
+    React.render(
+            <h1>Hello World</h1>,
+            document.getElementById("ceshi")
+    );
+</script>
+

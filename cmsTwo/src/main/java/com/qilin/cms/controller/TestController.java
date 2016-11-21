@@ -2,6 +2,8 @@ package com.qilin.cms.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -10,8 +12,22 @@ import java.util.stream.Collectors;
 /**
  * Created by gaohaiqing on 16-7-15.
  */
+@Controller
+@RequestMapping("test")
 public class TestController {
     private static Log log = LogFactory.getLog(TestController.class);
+
+    @RequestMapping("btrace.do")
+    public void btrace(){
+        log.info("进入btrace的方法了！");
+    }
+
+    @RequestMapping("hello.do")
+    public String hello(String name){
+        log.info("进入hello方法了！");
+        return "你好，"+ name;
+    }
+
 
     public static void main(String[] args){
         TestController test = new TestController();
