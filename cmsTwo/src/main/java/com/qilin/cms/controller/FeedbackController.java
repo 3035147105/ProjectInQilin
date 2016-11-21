@@ -21,9 +21,9 @@ public class FeedbackController extends BaseCrudController<Feedback>{
     private Log log = LogFactory.getLog(FeedbackController.class);
     @RequestMapping(value = "page.do")
     public String findpage(Model model, int offset, int limit) {
-        FeedbackExample feedbackExample = new FeedbackExample();
-        List<Feedback> page = super.page(feedbackExample, offset, limit);
-        model.addAttribute("page", page);
+//        FeedbackExample feedbackExample = new FeedbackExample();
+//        List<Feedback> page = super.page(feedbackExample, offset, limit);
+//        model.addAttribute("page", page);
         return "feedback/index";
     }
 }

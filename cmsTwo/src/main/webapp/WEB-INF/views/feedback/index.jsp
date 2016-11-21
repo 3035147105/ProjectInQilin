@@ -5,13 +5,6 @@
     <script src="${pageContext.request.contextPath}/jquery/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/bootstrap/bootstrap.min.css"/>
     <script src="${pageContext.request.contextPath}/bootstrap/bootstrap.min.js"></script>
-    <script src="${pageContext.request.contextPath}/react-15.4/react.min.js"></script>
-    <script src="${pageContext.request.contextPath}/react-15.4/react-dom.min.js"></script>
-    <script src="${pageContext.request.contextPath}/react-15.4/react-dom-fiber.min.js"></script>
-    <script src="${pageContext.request.contextPath}/react-15.4/react-dom-server.min.js"></script>
-    <script src="${pageContext.request.contextPath}/react-15.4/react-with-addons.min.js"></script>
-    <script src="${pageContext.request.contextPath}/react-15.4/browser.min.5.6.16.js"></script>
-    <script src="${pageContext.request.contextPath}/react-15.4/redux.min.3.6.0.js"></script>
     <title>feedback主页</title>
 </head>
 <body>
@@ -53,13 +46,6 @@
         </div>
     </div>
 </div>
-<div id="ceshi"></div>
 </body>
 </html>
-<script type="text/jsx">
-    React.render(
-            <h1>Hello World</h1>,
-            document.getElementById("ceshi")
-    );
-</script>
 
