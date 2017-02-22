@@ -11,6 +11,8 @@ public class Thread7 {
     private static Object lock2 = new Object();
 
     //这个例子能得出什么结论来吗？
+    //之前对notify和wait方法的理解不够，现在来看当时应该是想，再未到临界条件i=2000，线程2一直wait,等到线程1去notify，
+    //没达到想要的效果 是因为 线程1、2获取了不同的锁，notify方法只能唤醒相同锁的wait
     public static void main(String []args){
         //开启一个新线程,对i进行累加操作
         new Thread(){
@@ -21,7 +23,7 @@ public class Thread7 {
                         System.out.println(Thread.currentThread().getName() +"开始运行"+ System.currentTimeMillis());
                         while (true){
                             if(2000 == i){
-//                                notify();
+                                notify();
                                 break;
                             }else {
                                 i++;
@@ -37,12 +39,12 @@ public class Thread7 {
             }
         }.start();
         //确保线程1执行完
-        try {
-            Thread.sleep(3000);
-            System.out.println("睡觉的线程："+ Thread.currentThread().getName());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(3000);
+//            System.out.println("睡觉的线程："+ Thread.currentThread().getName());
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         //开启另一线程
         new Thread(){
             @Override
@@ -50,9 +52,9 @@ public class Thread7 {
                 try {
                     synchronized (lock2){
                         System.out.println(Thread.currentThread().getName() +"开始运行"+ System.currentTimeMillis());
-//                        if (2000 != i){
-//                            wait();
-//                        }
+                        if (2000 != i){
+                            wait();
+                        }
                         System.out.println("i："+i);
                         System.out.println(Thread.currentThread().getName() +"运行结束"+ System.currentTimeMillis());
                     }

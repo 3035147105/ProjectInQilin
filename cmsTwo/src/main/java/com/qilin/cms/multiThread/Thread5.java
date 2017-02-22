@@ -29,6 +29,8 @@ public class Thread5 {
 
 class myThread5 extends Thread{
     private volatile boolean isRunning = true;//volatile可以保证可见性，但不能保证原子性
+    //volatile适用的场景，对原子性不要求，只对可见性要求
+    //为什么volatile的出场率很低? 因为锁同时保证了可见性和原子性
 
     public boolean isRunning() {
         return isRunning;
