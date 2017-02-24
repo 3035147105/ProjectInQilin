@@ -6,6 +6,12 @@ package com.qilin.cms.algorithm;
  * 与算法相关的一些记录
  */
 public class AlgorithmClient {
+
+    public static void main(String[] args){
+        AlgorithmClient alg = new AlgorithmClient();
+        alg.hundred(3294385);
+    }
+
     /**
      * 简单的取一个数字的个、十、百位
      * @param number  正整数(三位)
@@ -54,8 +60,4 @@ public class AlgorithmClient {
         }
     }
 
-    public static void main(String[] args){
-        AlgorithmClient alg = new AlgorithmClient();
-        alg.hundred(3294385);
-    }
 }
