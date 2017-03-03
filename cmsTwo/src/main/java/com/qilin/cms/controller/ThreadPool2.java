@@ -42,7 +42,7 @@ public class ThreadPool2 {
         List<Future> results = new ArrayList<>();
         //获取所有用户的openId
         List<String> openIdList = threadPool.getOpenidList();
-        //获取线程池，多次调用都会获取同一个线程池，Spring Bean默认是单例
+        //获取线程池，多次调用都会获取同一个线程池，原因是 MyThreadPool作为Spring Bean，这样线程池就交给了Spring管理
         ExecutorService executorService = pool.getExecutorService();
         //每一条消息推送都单独用一个线程完成
         for(int i=0; i<openIdList.size(); i++){
@@ -55,8 +55,8 @@ public class ThreadPool2 {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-//        System.out.println("线程池状态2："+executorService);
-//        threadPool.getResult(results, executorService);
+        threadPool.getResult(results, executorService);
+        System.out.println("线程池状态2："+executorService);
     }
 
     class MyThread implements Callable<Integer> {

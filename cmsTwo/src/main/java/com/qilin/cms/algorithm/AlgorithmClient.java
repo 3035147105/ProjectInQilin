@@ -1,5 +1,8 @@
 package com.qilin.cms.algorithm;
 
+import com.qilin.cms.algorithm.BinaryTreeNodePac.BinaryTreeNode;
+import com.qilin.cms.algorithm.BinaryTreeNodePac.BinaryTreeTest;
+
 /**
  * Created by gaohaiqing on 17-1-12.
  *
@@ -9,7 +12,29 @@ public class AlgorithmClient {
 
     public static void main(String[] args){
         AlgorithmClient alg = new AlgorithmClient();
-        alg.hundred(3294385);
+
+        BinaryTreeTest treeTest = new BinaryTreeTest();
+        BinaryTreeNode orign = treeTest.produceData();
+        int nodeNum = treeTest.getNodeNum(orign);
+        int nodeDepth = treeTest.getDepth(orign);
+        System.out.print("--------前序遍历:");
+        treeTest.preVisit(orign);
+
+        System.out.println();
+        System.out.print("--------中序遍历:");
+        treeTest.middleVisit(orign);
+
+        System.out.println();
+        System.out.print("--------后序遍历:");
+        treeTest.postVisit(orign);
+
+        System.out.println();
+        System.out.print("--------分层遍历:");
+        treeTest.levelVisit(orign);
+
+        System.out.println();
+        System.out.println("二叉树的节点个数："+ nodeNum);
+        System.out.println("二叉树的深度："+ nodeDepth);
     }
 
     /**

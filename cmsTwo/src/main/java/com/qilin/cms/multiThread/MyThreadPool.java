@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
  */
 @Component
 public class MyThreadPool {
-    private ExecutorService executorService = Executors.newCachedThreadPool();
+    private ExecutorService executorService = Executors.newFixedThreadPool(20);
 
     public ExecutorService getExecutorService() {
         return executorService;

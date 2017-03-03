@@ -62,7 +62,7 @@ public class ThreadPool {
     //模拟获取全部的openId
     public List<String> getOpenidList(){
         List<String> openlist = new ArrayList<>();
-        for (int i=0; i<10; i++)
+        for (int i=0; i<1000; i++)
             openlist.add(i +" ");
         return openlist;
     }
