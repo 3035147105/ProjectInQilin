@@ -1,5 +1,7 @@
 package com.qilin.cms.algorithm.BinaryTreeNodePac;
 
+import com.qilin.cms.algorithm.MoneyTreeNodePac.MoneyTreeNode;
+
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
@@ -9,7 +11,10 @@ import java.util.concurrent.ArrayBlockingQueue;
  * http://blog.csdn.net/luckyxiaoqiang/article/details/7518888/  参考这篇博客
  */
 public class BinaryTreeTest {
-
+    /**
+     * 生产一个二叉树实例
+     * @return
+     */
     public BinaryTreeNode produceData(){
         BinaryTreeNode left2 = new BinaryTreeNode(6, null, null);
         BinaryTreeNode right1 = new BinaryTreeNode(5, null, null);
@@ -83,6 +88,7 @@ public class BinaryTreeTest {
 
     /**
      * 分层遍历，按照从上往下，从左往右的方式遍历二叉树
+     * 使用FIFO集合辅助实现
      * @param node
      */
     public void levelVisit(BinaryTreeNode node){
@@ -101,8 +107,80 @@ public class BinaryTreeTest {
                 queue.offer(treeNode.getRightTree());
         }
     }
+    /**
+     * 将二叉查找树变为有序的双向链表
+     */
+//    public void Convert(BinaryTreeNode  pRoot, BinaryTreeNode pFirstNode, BinaryTreeNode pLastNode){
+//        BinaryTreeNode pFirstLeft;
+//        BinaryTreeNode pLastLeft;
+//        BinaryTreeNode pFirstRight;
+//        BinaryTreeNode pLastRight;
+//        if (pRoot == null){
+//            pFirstNode = null;
+//            pLastNode = null;
+//            return;
+//        }
+//        if (pRoot.getLeftTree() == null){
+//            pFirstNode = pRoot;
+//        }else {
+//            Convert(pRoot.getLeftTree(), pFirstLeft, pLastLeft);
+//            pFirstNode = pFirstLeft;
+//            pRoot.leftTree = pLastLeft;
+//            pLastLeft.rightTree = pRoot;
+//        }
+//
+//        if (pRoot.getRightTree() == null){
+//            pLastNode = pRoot;
+//        }else {
+//            Convert(pRoot.getRightTree(), pFirstRight, pLastRight);
+//            pLastNode = pLastRight;
+//            pRoot.rightTree = pFirstRight;
+//            pFirstRight.leftTree = pRoot;
+//        }
+//    }
 
-    public void Convert(BinaryTreeNode  pRoot, BinaryTreeNode pFirstNode, BinaryTreeNode pLastNode){
+    /**
+     * 求二叉树的镜像
+     * @param node
+     * @return
+     */
+    public BinaryTreeNode mirror(BinaryTreeNode node){
+        if (node == null)
+            return null;
+        BinaryTreeNode left = mirror(node.getLeftTree());
+        BinaryTreeNode right = mirror(node.getRightTree());
+        node.leftTree = right;
+        node.rightTree = left;
+        return node;
+    }
 
+    /**
+     * 求二叉树中两个节点的最低公共祖先节点
+     * @param pRoot   二叉树源
+     * @param pRoot1  第一个节点
+     * @param pRoot2  第二个节点
+     * @return  最低公共祖先节点
+     */
+    public BinaryTreeNode getLastCommonParent(BinaryTreeNode pRoot, BinaryTreeNode pRoot1, BinaryTreeNode pRoot2){
+        if (pRoot == null)
+            return null;
+        if (pRoot1 == null || pRoot2 == null)
+            return null;
+        //假设一定有公共的祖先节点
+        BinaryTreeNode tmp1Root;
+        while (true){
+            tmp1Root = a(pRoot, pRoot1);
+            if (tmp1Root != null){
+                return pRoot1;
+            }
+            pRoot = pRoot.leftTree;
+        }
+    }
+
+    public BinaryTreeNode a(BinaryTreeNode pRoot, BinaryTreeNode pRoot1){
+        if(pRoot.leftTree.value == pRoot1.value || pRoot.rightTree.value == pRoot1.value){
+            return pRoot;
+        }
+        return null;
     }
 }

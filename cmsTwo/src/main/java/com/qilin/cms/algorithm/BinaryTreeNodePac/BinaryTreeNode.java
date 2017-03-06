@@ -5,9 +5,12 @@ package com.qilin.cms.algorithm.BinaryTreeNodePac;
  * 二叉树实体
  */
 public class BinaryTreeNode {
-    private int value;
-    private BinaryTreeNode leftTree;
-    private BinaryTreeNode rightTree;
+    public int value;
+    public BinaryTreeNode leftTree;
+    public BinaryTreeNode rightTree;
+
+    public BinaryTreeNode(){
+    }
 
     public BinaryTreeNode(int value, BinaryTreeNode leftTree, BinaryTreeNode rightTree) {
         this.value = value;

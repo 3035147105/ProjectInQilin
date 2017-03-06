@@ -2,6 +2,8 @@ package com.qilin.cms.algorithm;
 
 import com.qilin.cms.algorithm.BinaryTreeNodePac.BinaryTreeNode;
 import com.qilin.cms.algorithm.BinaryTreeNodePac.BinaryTreeTest;
+import com.qilin.cms.algorithm.MoneyTreeNodePac.MoneyTreeNode;
+import com.qilin.cms.algorithm.MoneyTreeNodePac.MoneyTreeTest;
 
 /**
  * Created by gaohaiqing on 17-1-12.
@@ -14,27 +16,42 @@ public class AlgorithmClient {
         AlgorithmClient alg = new AlgorithmClient();
 
         BinaryTreeTest treeTest = new BinaryTreeTest();
-        BinaryTreeNode orign = treeTest.produceData();
+        BinaryTreeNode orign = treeTest.produceData();//拿到一个二叉树对象
         int nodeNum = treeTest.getNodeNum(orign);
         int nodeDepth = treeTest.getDepth(orign);
-        System.out.print("--------前序遍历:");
-        treeTest.preVisit(orign);
+//        System.out.print("--------前序遍历:");
+//        treeTest.preVisit(orign);
+//
+//        System.out.println();
+//        System.out.print("--------中序遍历:");
+//        treeTest.middleVisit(orign);
+//
+//        System.out.println();
+//        System.out.print("--------后序遍历:");
+//        treeTest.postVisit(orign);
 
-        System.out.println();
-        System.out.print("--------中序遍历:");
-        treeTest.middleVisit(orign);
+//        System.out.println();
+//        System.out.print("--------分层遍历:");
+//        treeTest.levelVisit(orign);
 
-        System.out.println();
-        System.out.print("--------后序遍历:");
-        treeTest.postVisit(orign);
+//        System.out.println();
+//        System.out.println("二叉树的节点个数："+ nodeNum);
+//        System.out.println("二叉树的深度："+ nodeDepth);
+//        BinaryTreeNode mirrorNode = treeTest.mirror(orign);
+//        System.out.println();
+//        System.out.println("------原二叉树镜像：");
+//        treeTest.levelVisit(mirrorNode);
 
+        MoneyTreeTest moneyTreeTest = new MoneyTreeTest();
+        MoneyTreeNode moneyTreeOrign = moneyTreeTest.produceMoneyTreeData();
         System.out.println();
-        System.out.print("--------分层遍历:");
-        treeTest.levelVisit(orign);
-
+        System.out.println("------三叉树分层遍历：");
+        moneyTreeTest.levelMoneyTreeNode(moneyTreeOrign);
+        //三叉树镜像
+        MoneyTreeNode mirrorNode = moneyTreeTest.mirror(moneyTreeOrign);
         System.out.println();
-        System.out.println("二叉树的节点个数："+ nodeNum);
-        System.out.println("二叉树的深度："+ nodeDepth);
+        System.out.println("--------三叉树镜像：");
+        moneyTreeTest.levelMoneyTreeNode(mirrorNode);
     }
 
     /**
