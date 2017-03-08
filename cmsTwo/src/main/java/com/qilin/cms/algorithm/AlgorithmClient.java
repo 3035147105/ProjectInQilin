@@ -17,6 +17,8 @@ public class AlgorithmClient {
 
         BinaryTreeTest treeTest = new BinaryTreeTest();
         BinaryTreeNode orign = treeTest.produceData();//拿到一个二叉树对象
+        BinaryTreeNode commonParent = treeTest.getLastCommonParent(orign, new BinaryTreeNode(7, null, null), new BinaryTreeNode(5, null, null));
+        System.out.println(commonParent.value);
         int nodeNum = treeTest.getNodeNum(orign);
         int nodeDepth = treeTest.getDepth(orign);
 //        System.out.print("--------前序遍历:");
@@ -42,16 +44,16 @@ public class AlgorithmClient {
 //        System.out.println("------原二叉树镜像：");
 //        treeTest.levelVisit(mirrorNode);
 
-        MoneyTreeTest moneyTreeTest = new MoneyTreeTest();
-        MoneyTreeNode moneyTreeOrign = moneyTreeTest.produceMoneyTreeData();
-        System.out.println();
-        System.out.println("------三叉树分层遍历：");
-        moneyTreeTest.levelMoneyTreeNode(moneyTreeOrign);
-        //三叉树镜像
-        MoneyTreeNode mirrorNode = moneyTreeTest.mirror(moneyTreeOrign);
-        System.out.println();
-        System.out.println("--------三叉树镜像：");
-        moneyTreeTest.levelMoneyTreeNode(mirrorNode);
+//        MoneyTreeTest moneyTreeTest = new MoneyTreeTest();
+//        MoneyTreeNode moneyTreeOrign = moneyTreeTest.produceMoneyTreeData();
+//        System.out.println();
+//        System.out.println("------三叉树分层遍历：");
+//        moneyTreeTest.levelMoneyTreeNode(moneyTreeOrign);
+//        //三叉树镜像
+//        MoneyTreeNode mirrorNode = moneyTreeTest.mirror(moneyTreeOrign);
+//        System.out.println();
+//        System.out.println("--------三叉树镜像：");
+//        moneyTreeTest.levelMoneyTreeNode(mirrorNode);
     }
 
     /**

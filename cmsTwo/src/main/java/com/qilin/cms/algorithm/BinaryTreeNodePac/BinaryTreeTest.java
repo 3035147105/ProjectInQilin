@@ -2,6 +2,8 @@ package com.qilin.cms.algorithm.BinaryTreeNodePac;
 
 import com.qilin.cms.algorithm.MoneyTreeNodePac.MoneyTreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
@@ -16,9 +18,10 @@ public class BinaryTreeTest {
      * @return
      */
     public BinaryTreeNode produceData(){
+        BinaryTreeNode right2 = new BinaryTreeNode(7, null, null);
         BinaryTreeNode left2 = new BinaryTreeNode(6, null, null);
         BinaryTreeNode right1 = new BinaryTreeNode(5, null, null);
-        BinaryTreeNode left1 = new BinaryTreeNode(4, null, null);
+        BinaryTreeNode left1 = new BinaryTreeNode(4, null, right2);
         BinaryTreeNode right = new BinaryTreeNode(3, left2, null);
         BinaryTreeNode left = new BinaryTreeNode(2, left1, right1);
         BinaryTreeNode orign = new BinaryTreeNode(1, left,  right);
@@ -157,30 +160,72 @@ public class BinaryTreeTest {
     /**
      * 求二叉树中两个节点的最低公共祖先节点
      * @param pRoot   二叉树源
-     * @param pRoot1  第一个节点
-     * @param pRoot2  第二个节点
+     * @param pNode1  第一个节点
+     * @param pNode2  第二个节点
      * @return  最低公共祖先节点
+     * 思路：先找出根节点到两个节点的路径，然后（倒正）依次比较两条路径上的元素，找到相同的那个，即是最低公共祖先节点
+     *
+     * 想法是好的，但现实操作没那么简单，找的时候总是从左往右找，不是预期的那种找法
      */
-    public BinaryTreeNode getLastCommonParent(BinaryTreeNode pRoot, BinaryTreeNode pRoot1, BinaryTreeNode pRoot2){
-        if (pRoot == null)
+    public BinaryTreeNode getLastCommonParent(BinaryTreeNode pRoot, BinaryTreeNode pNode1, BinaryTreeNode pNode2){
+        if (pRoot == null || pNode1 == null || pNode2 == null){
             return null;
-        if (pRoot1 == null || pRoot2 == null)
-            return null;
-        //假设一定有公共的祖先节点
-        BinaryTreeNode tmp1Root;
-        while (true){
-            tmp1Root = a(pRoot, pRoot1);
-            if (tmp1Root != null){
-                return pRoot1;
-            }
-            pRoot = pRoot.leftTree;
         }
+        List<BinaryTreeNode> list1 = new ArrayList<>();
+        boolean isFound1 = find(pRoot, pNode1, list1);
+        List<BinaryTreeNode> list2 = new ArrayList<>();
+        boolean isFound2 = find(pRoot, pNode2, list2);
+        //isFound1和isFound2有一个为false，说明传进来的两个节点至少有一个不在此二叉树中
+        if (isFound1 && isFound2){
+            return null;
+        }
+        System.out.println("-----------------第一个元素经过的路径：");
+        seeList(list1);
+        System.out.println("-----------------第二个元素经过的路径：");
+        seeList(list2);
+        BinaryTreeNode lastCommonParent = new BinaryTreeNode();
+//        boolean flag = false;
+//        for (int i = list1.size()-1; i >= 0; i--){
+//           for (int j = list2.size()-1; j >= 0; j--){
+//               if (list1.get(i).value == list2.get(i).value){
+//                   lastCommonParent = list1.get(i);
+//                   flag = true;
+//                   break;
+//               }
+//           }
+//           if (flag)
+//               break;
+//        }
+        return lastCommonParent;
+    }
+    public void seeList(List<BinaryTreeNode> list){
+        for (int j = list.size()-1; j >= 0; j--){
+            System.out.print(list.get(j).value);
+        }
+        System.out.println();
+    }
+    /**
+     * 将根节点到指定节点之间的元素都保存到list中
+     * @param pRoot  根节点
+     * @param pNode  指定节点
+     * @param list   栈-LIFO
+     * @return
+     */
+    public boolean find(BinaryTreeNode pRoot, BinaryTreeNode pNode, List<BinaryTreeNode> list){
+        if (pRoot == null)
+            return false;
+        if (pRoot.value == pNode.value){
+            return true;
+        }
+        list.add(pRoot);
+        boolean isFound;
+        isFound = find(pRoot.leftTree, pNode, list);
+        if (!isFound){
+            find(pRoot.rightTree, pNode, list);
+        }
+//        if (!isFound)
+//            queue.poll();
+        return isFound;
     }
 
-    public BinaryTreeNode a(BinaryTreeNode pRoot, BinaryTreeNode pRoot1){
-        if(pRoot.leftTree.value == pRoot1.value || pRoot.rightTree.value == pRoot1.value){
-            return pRoot;
-        }
-        return null;
-    }
 }
