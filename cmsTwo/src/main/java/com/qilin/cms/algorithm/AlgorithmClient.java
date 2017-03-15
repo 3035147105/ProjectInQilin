@@ -37,8 +37,8 @@ public class AlgorithmClient {
 
         System.out.println();
         System.out.print("--------是否相同:");
-        boolean flag = treeTest.isSame(orign1, orign2);
-        System.out.println(flag);
+//        boolean flag = treeTest.isSame(orign1, orign2);
+//        System.out.println(flag);
 
 //        System.out.println();
 //        System.out.println("二叉树的节点个数："+ nodeNum);

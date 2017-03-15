@@ -13,7 +13,12 @@ import java.util.concurrent.ArrayBlockingQueue;
  * http://blog.csdn.net/luckyxiaoqiang/article/details/7518888/  参考这篇博客
  */
 public class BinaryTreeTest {
-    public boolean isSame(BinaryTreeNode node1, BinaryTreeNode node2){
+    public boolean isSame(BinaryTreeNode node1, BinaryTreeNode node2, BinaryTreeNode node1Origin, BinaryTreeNode node2Origin){
+        if (node1.value == node2.value){
+            isSame(node1.leftTree, node2.leftTree, node1Origin, node2Origin);//往下走一个
+        }else if (node1.value == node2Origin.rightTree.value){
+            isSame(node1Origin.rightTree, node2Origin.leftTree, node1, node2);
+        }
         return false;
     }
 
