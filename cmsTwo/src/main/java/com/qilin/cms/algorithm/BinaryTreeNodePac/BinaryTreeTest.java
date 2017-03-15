@@ -13,6 +13,47 @@ import java.util.concurrent.ArrayBlockingQueue;
  * http://blog.csdn.net/luckyxiaoqiang/article/details/7518888/  参考这篇博客
  */
 public class BinaryTreeTest {
+    public boolean isSame(BinaryTreeNode node1, BinaryTreeNode node2){
+        return false;
+    }
+
+
+    public BinaryTreeNode produceData1(){
+        BinaryTreeNode node7 = new BinaryTreeNode(7);
+        BinaryTreeNode node6 = new BinaryTreeNode(6);
+        BinaryTreeNode node5 = new BinaryTreeNode(5);
+        BinaryTreeNode node4 = new BinaryTreeNode(4);
+        BinaryTreeNode node3 = new BinaryTreeNode(3);
+        BinaryTreeNode node2 = new BinaryTreeNode(2);
+        BinaryTreeNode node1 = new BinaryTreeNode(1);
+        BinaryTreeNode orign = new BinaryTreeNode(0);
+        orign.setLeftTree(node1);
+        orign.setRightTree(node2);
+        node1.setLeftTree(node3);
+        node1.setRightTree(node4);
+        node4.setLeftTree(node6);
+        node2.setLeftTree(node5);
+        node5.setLeftTree(node7);
+        return orign;
+    }
+    public BinaryTreeNode produceData2(){
+        BinaryTreeNode orign = new BinaryTreeNode(0);
+        BinaryTreeNode orign1 = new BinaryTreeNode(1);
+        BinaryTreeNode orign2 = new BinaryTreeNode(2);
+        BinaryTreeNode orign3 = new BinaryTreeNode(3);
+        BinaryTreeNode orign4 = new BinaryTreeNode(4);
+        BinaryTreeNode orign5 = new BinaryTreeNode(5);
+        BinaryTreeNode orign6 = new BinaryTreeNode(6);
+        BinaryTreeNode orign7 = new BinaryTreeNode(7);
+        orign.setLeftTree(orign2);
+        orign.setRightTree(orign1);
+        orign2.setLeftTree(orign5);
+        orign5.setRightTree(orign7);
+        orign1.setLeftTree(orign4);
+        orign1.setRightTree(orign3);
+        orign4.setLeftTree(orign6);
+        return orign;
+    }
     /**
      * 生产一个二叉树实例
      * @return

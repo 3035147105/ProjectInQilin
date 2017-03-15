@@ -17,6 +17,7 @@ public class SpecialAbstraction extends Abstraction{
 
     @Override
     public void sendMessage(){
+        a();
         super.sendMessage();
     }
 

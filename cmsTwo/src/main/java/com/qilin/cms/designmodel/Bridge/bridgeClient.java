@@ -14,8 +14,8 @@ package com.qilin.cms.designmodel.Bridge;
  */
 public class bridgeClient {
     public static void main(String[] args){
-        Implementor smsImple = new SmsMsg();//选择系统消息的方式
-        Abstraction abstraction = new CommonAbstraction(smsImple);
+        Implementor smsImple = new EmailMsg();//选择系统消息的方式
+        Abstraction abstraction = new SpecialAbstraction(smsImple);
         abstraction.sendMessage();
     }
 }

@@ -11,6 +11,9 @@ public class BinaryTreeNode {
 
     public BinaryTreeNode(){
     }
+    public BinaryTreeNode(int value){
+        this.value = value;
+    }
 
     public BinaryTreeNode(int value, BinaryTreeNode leftTree, BinaryTreeNode rightTree) {
         this.value = value;
@@ -28,5 +31,13 @@ public class BinaryTreeNode {
 
     public BinaryTreeNode getRightTree() {
         return rightTree;
+    }
+
+    public void setLeftTree(BinaryTreeNode leftTree) {
+        this.leftTree = leftTree;
+    }
+
+    public void setRightTree(BinaryTreeNode rightTree) {
+        this.rightTree = rightTree;
     }
 }

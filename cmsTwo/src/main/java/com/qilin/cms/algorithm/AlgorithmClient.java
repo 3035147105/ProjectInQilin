@@ -16,11 +16,10 @@ public class AlgorithmClient {
         AlgorithmClient alg = new AlgorithmClient();
 
         BinaryTreeTest treeTest = new BinaryTreeTest();
-        BinaryTreeNode orign = treeTest.produceData();//拿到一个二叉树对象
-        BinaryTreeNode commonParent = treeTest.getLastCommonParent(orign, new BinaryTreeNode(7, null, null), new BinaryTreeNode(5, null, null));
-        System.out.println(commonParent.value);
-        int nodeNum = treeTest.getNodeNum(orign);
-        int nodeDepth = treeTest.getDepth(orign);
+        BinaryTreeNode orign1 = treeTest.produceData1();//拿到一个二叉树对象
+        BinaryTreeNode orign2 = treeTest.produceData2();//拿到一个二叉树对象
+//        int nodeNum = treeTest.getNodeNum(orign);
+//        int nodeDepth = treeTest.getDepth(orign);
 //        System.out.print("--------前序遍历:");
 //        treeTest.preVisit(orign);
 //
@@ -34,7 +33,12 @@ public class AlgorithmClient {
 
 //        System.out.println();
 //        System.out.print("--------分层遍历:");
-//        treeTest.levelVisit(orign);
+//        treeTest.levelVisit(orign1);
+
+        System.out.println();
+        System.out.print("--------是否相同:");
+        boolean flag = treeTest.isSame(orign1, orign2);
+        System.out.println(flag);
 
 //        System.out.println();
 //        System.out.println("二叉树的节点个数："+ nodeNum);
