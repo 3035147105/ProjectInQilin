@@ -1,7 +1,9 @@
 package com.qilin.cms.controller;
 
+import com.qilin.cms.springAop.TargetClass;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -17,9 +19,18 @@ import java.util.stream.Collectors;
 public class TestController {
     private static Log log = LogFactory.getLog(TestController.class);
 
+    @Autowired
+    TargetClass target;
+
     @RequestMapping("btrace.do")
     public void btrace(){
-        log.info("进入btrace的方法了！");
+        target.eatFood();
+        log.info("目标类的class:"+ target.getClass());
+    }
+
+    @RequestMapping("btraceAop.do")
+    public void btraceAop(String name){
+        log.info("btrace的名字是："+ name);
     }
 
     @RequestMapping("hello.do")

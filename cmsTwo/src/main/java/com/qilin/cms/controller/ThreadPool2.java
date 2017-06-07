@@ -28,11 +28,11 @@ public class ThreadPool2 {
     public void test(){
     }
 
-    @Scheduled(initialDelay = 6000L, fixedDelay = 3600000L)
+//    @Scheduled(initialDelay = 6000L, fixedDelay = 3600000L)
     public void a(){
         test1();
     }
-    @Scheduled(initialDelay = 6000L, fixedDelay = 3600000L)
+//    @Scheduled(initialDelay = 6000L, fixedDelay = 3600000L)
     public void b(){
         test1();
     }
