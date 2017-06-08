@@ -17,7 +17,7 @@ public class DynamicProxyClient {
          * proxy是动态代理对象
          * 代理对象 与 真实对象使用相同的类加载器，
          * 相同的接口
-         *
+         * ClassLoader和Class[]都使用接口
          */
         ClassLoader classLoader = service.getClass().getClassLoader();//类加载器
         Class[] classes = new Class[]{IService.class};//类
