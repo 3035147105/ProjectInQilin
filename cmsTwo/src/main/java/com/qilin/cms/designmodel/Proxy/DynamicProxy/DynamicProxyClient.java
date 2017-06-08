@@ -1,5 +1,6 @@
 package com.qilin.cms.designmodel.Proxy.DynamicProxy;
 
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 
 /**
@@ -8,19 +9,22 @@ import java.lang.reflect.Proxy;
 public class DynamicProxyClient {
 
     public static void main(String []args){
-        /**客户端调用起来非常方便，只需要替换=右边的代码就可以了**/
+        /**客户端调用起来非常方便，只需要替换=右边的代码就可以了
+         * **/
         IService service = new UserService();
 //        IService service = new ProductService();
         /**
          * proxy是动态代理对象
          * 代理对象 与 真实对象使用相同的类加载器，
          * 相同的接口
+         *
          */
         ClassLoader classLoader = service.getClass().getClassLoader();//类加载器
         Class[] classes = new Class[]{IService.class};//类
-        TransactionInvationHandler invationHandler = new TransactionInvationHandler(service);//动态代理对象
-
+        InvocationHandler invationHandler = new TransactionInvationHandler(service);//动态代理对象
+        //代理对象强转成真实对象
         IService proxy = (IService) Proxy.newProxyInstance(classLoader, classes, invationHandler);
+        //执行真实对象的方法
         proxy.saveObj();
     }
 
